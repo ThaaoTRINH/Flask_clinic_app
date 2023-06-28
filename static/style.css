@@ -1,0 +1,61 @@
+@import 'registration_css.css';
+@import 'patients_list_css.css';
+@import 'patient_show.css';
+
+
+:root {
+    --background-color: #89CFF0; /*baby blue*/
+    --title-color: #5F9EA0; /*Cadet blue*/
+    --sub-title-color: #7393B3; /*Blue Gray */
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+   text-align: center;
+   margin-top: 30px;
+   }
+p, h3{
+    text-align: center;
+    margin: 7px auto 30px auto;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+
+}
+.home a{
+    text-decoration: none;
+    width: 35%;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    background-color: var(--background-color);
+    color: black;
+    margin: 20px auto 0;
+}
+.home a:hover{
+    background-color: gray;
+    color: var(--background-color);
+}
+
+@media (max-width: 768px;) {
+    .container {
+    padding: 10px;
+    }
+}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} Patients List {% endblock %}
+
+{% block content %}
+    <div class="patient_show">
+        <h1>PHIEU NHAN BENH</h1>
+        <p>Ngay: {{current_date}} </p>
+        <div class="part">
+            <p>Ho va Ten: {{name}}</p>
+            <p>Nam sinh: {{birth_year}}</p>
+            <p>So DT: {{phone}}</p>
+            <p>Dia chi: {{address}}</p>
+        </div>
+        <div class="part">
+            <p> NGUYEN NHAN DIEU TRI</p>
+            <ol>
+                {% for line in formatted_details_list %}
+                <li>{{line}}</li>
+                <br>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="part bold_text">
+            <p>So tien can thanh toan: {{ sum }}</p>
+             <div class="show_footer">
+                <button id="printButton">In phieu</button>
+                <a href="/goback">Quay ve trang chu </a>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}

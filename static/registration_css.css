@@ -1,0 +1,148 @@
+.registration {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-gap: 50px;
+    grid-template-areas:
+    "lf lf lf lf lf lf lf lf rg rg rg rg";
+    justify-content:center;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 4px gray;
+    padding: 30px 50px;
+    margin: 0 auto;
+}
+
+
+.form{
+    grid-area: lf;
+    justify-content: center;
+    border-right: 1px solid #d3d3d3;
+    margin-top: 30px;
+    padding-right: 50px;
+}
+.filter{
+grid-area: rg;
+}
+.filter_panel{
+    display: flex;
+    flex-direction: column;
+}
+.form label{
+    display: block;
+    margin-bottom: 5px;
+}
+input[type='text'], input[type='checkbox']{
+    width: 100%;
+    padding: 10px;
+    height: 2em;
+}
+#sieu_am_select, #xnht_select, #xnm_select, #pap_select,
+#vong_select, #que_select, #msmp_select, #khac_select{
+    width: 90%;
+    }
+.check_form, .register_tab{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    }
+
+.box{
+    width: 90%;
+
+    }
+.register_tab{
+    display: flex;
+    justify-content: center;
+}
+.tab_left{
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.tab_left input[type="submit"]{
+    margin-bottom: 30px;
+}
+.patient_search_day{
+    border: 1px solid black;
+    padding: 30px;
+}
+.tab_left a{
+    margin-top: 30px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+.tab_left .day_form{
+    display: flex;
+    flex-direction:column;
+    padding-top: 30px;
+    margin: 3px 5px;
+}
+.input_day{
+    display: flex;
+    flex-direction: row;
+    }
+.input_day input[type="date"]{
+    margin-right: 15px;}
+#save_print, .patient_search_form input[type="submit"], #search_day{
+    text-align: center;
+    width: 100%;
+    padding: 10px 35px;
+    cursor: pointer;
+    background-color: #D3D3D3;
+    border: none;
+    text-decoration: none;
+    font-size: 1em;
+    }
+
+#save_print:hover, .filter a:hover, .patient_search_form input[type="submit"]:hover,
+#search_day:hover, .day_form input[type="submit"]:hover {
+    background-color: var(--title-color);
+    color: white;
+    border: none;
+    }
+.filter{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20%;
+    justify-content: center;
+    align-item: center;
+
+}
+.filter a{
+    text-decoration: none;
+    text-align: center;
+    padding: 20px;
+    background-color: #d3d3d3;
+    border-radius: 5px;
+    margin: 20px 0;
+    color: black;
+}
+/* for patient_search_form page */
+.patient_search_form{
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 8px gray;
+    padding: 30px;
+    margin: 0 auto;
+
+}
+
+.patient_search_form span{
+    font-size: 0.8em;
+}
+.day_form .inline{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.day_form input[type="submit"]{
+text-decoration: none;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #d3d3d3;
+    border: none;
+    margin: 20px 0;
+    color: black;
+}

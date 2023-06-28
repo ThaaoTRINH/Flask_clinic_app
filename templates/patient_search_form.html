@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Patients List {% endblock %}
+
+{% block content %}
+<div class="patient_search_form">
+    <form method="POST" action="/patient_search" id="patient_search">
+        <label for="search_query">Tim benh nhan:</label>
+        <input type="text" id="search_query" name="search_query" required><br><br>
+
+<!--        <label for="name">Ho va ten:</label>-->
+<!--        <input type="text" id="name" name="name" ><br><br>-->
+
+<!--        <label for="birth_year">Nam Sinh:</label>-->
+<!--        <input type="text" id="birth_year" name="birth_year" ><br><br>-->
+
+<!--        <label for="address">Dia chi:</label>-->
+<!--        <input type="text" id="address" name="address" ><br><br>-->
+
+<!--        <label for="phone">SO DT:</label>-->
+<!--        <input type="text" id="phone" name="phone" ><br><br>-->
+
+        <input type="submit" id="patient_search_submit" value="Tim benh nhan">
+    </form>
+</div>
+{% endblock %}

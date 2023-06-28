@@ -1,0 +1,47 @@
+.patient_show {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 8px gray;
+    padding: 30px;
+}
+
+.part{
+    width: 60%;
+    margin: 0 auto;
+    border: 1px solid #d3d3d3;
+    padding: 30px 50px;
+}
+.part p{
+    text-align: left;
+}
+.bold_text{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.show_footer {
+    display: flex;
+    justify-content: space-between;
+    }
+
+.show_footer a, .show_footer #printButton{
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #d3d3d3;
+    border: none;
+    margin: 20px 0;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+}
+#printButton:hover, .show_footer a:hover {
+    background-color: var(--title-color);
+    color: white;
+    border: none;
+    }
+
+

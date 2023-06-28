@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+
+{% block title %} Registration {% endblock %}
+
+{% block content %}
+
+        <h1> THONG TIN BENH NHAN </h1>
+        <p> Ngay: {{current_date}}</p>
+
+        <div class="registration">
+
+            <div class="form">
+                <form method="POST" action="/register" id="register">
+                    <label for="name">Ho va ten:</label>
+                    <input type="text" id="name" name="name"><br><br>
+
+                    <label for="birth_year">Nam Sinh:</label>
+                    <input type="text" id="birth_year" name="birth_year"><br><br>
+
+                    <label for="address">Dia chi:</label>
+                    <input type="text" id="address" name="address"><br><br>
+
+                    <label for="phone">SO DT:</label>
+                    <input type="text" id="phone" name="phone"><br><br>
+
+                    <label for="note">Chi chu:</label>
+                    <input type="text" id="note" name="note"><br><br>
+
+                    <h1>NGUYEN NHAN DIEU TRI</h1>
+                    <div class="check_form">
+                      <div class="box">
+                        <input type="checkbox" id="sieu_am" name="option" value="Sieu am" onclick="showForm('sieu_am_select')"/>
+                        <label for="sieu_am">Sieu am</label>
+                        <br />
+                        <select id="sieu_am_select" name="select_option" form="register" style="display: none;">
+                          <option value=" "> </option>
+                            {% for line in sieu_am_details %}
+                            <option value="{{line[1]}}">{{line[1]}}</option>
+                            {% endfor %}
+                        </select>
+                      </div>
+
+                      <div class="box">
+                        <input type="checkbox" id="xnht" name="option" value="Xet nghiem huyet trang"
+                               onclick="showForm('xnht_select')"/>
+                        <label for="xnht">Xet nghiem huyet trang</label>
+                        <br />
+                        <select id="xnht_select" name="select_option" form="register" style="display: none;">
+                            <option value=" "> </option>
+                          {% for line in xnht_details %}
+                            <option value="{{line[1]}}">{{line[1]}}</option>
+                        {% endfor %}
+                        </select>
+                      </div>
+                      <div class="box">
+                        <input type="checkbox" id="xnm" name="option" value="Xet nghiem mau"
+                               onclick="showForm('xnm_select')" />
+                        <label for="xnm">Xet nghiem mau</label>
+                        <br />
+                        <select id="xnm_select" name="select_option" form="register" style="display: none;">
+                            <option value=" "> </option>
+                            {% for line in xnm_details %}
+                            <option value="{{line[1]}}">{{line[1]}}</option>
+                        {% endfor %}
+                        </select>
+                      </div>
+
+                      <div class="box">
+                        <input type="checkbox" id="pap_hpv" name="option" value="PAP - HPV" onclick="showForm('pap_select')"/>
+                        <label for="pap_hpv">PAP - HPV</label>
+                        <br />
+                        <select id="pap_select" name="select_option" form="register" style="display: none;">
+                            <option value=" "> </option>
+                        {% for line in pap_hpv_details %}
+                            <option value="{{line[1]}}">{{line[1]}}</option>
+                        {% endfor %}
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="check_form">
+                      <div class="box">
+
+                        <input type="checkbox" id="vong" name="option" value="Vong" onclick="showForm('vong_select')"/>
+                        <label for="vong">Vong</label>
+
+                        <br />
+                        <select id="vong_select" name="select_option" form="register" style="display: none;">
+                            <option value=" "> </option>
+                     {% for line in vong_details %}
+                            <option value="{{line[1]}}">{{line[1]}}</option>
+                        {% endfor %}
+                        </select>
+                      </div>
+
+                      <div class="box">
+                        <input type="checkbox" id="que" name="option" value="Que" onclick="showForm('que_select')" />
+                        <label for="que">Que</label>
+                        <br />
+                        <select id="que_select" name="select_option" form="register" style="display: none;">
+                            <option value=" "> </option>
+                          {% for line in que_details %}
+                            <option value="{{line[1]}}">{{line[1]}}</option>
+                        {% endfor %}
+                        </select>
+                      </div>
+
+                      <div class="box">
+                        <input type="checkbox" id="msmp" name="option" value="MSMP" onclick="showForm('msmp_select')" />
+                        <label for="msmp">MSMP</label>
+                        <br />
+                        <select id="msmp_select" name="select_option" form="register" style="display: none;">
+                            <option value=" "> </option>
+                         {% for line in msmp_details %}
+                            <option value="{{line[1]}}">{{line[1]}}</option>
+                        {% endfor %}
+                        </select>
+                      </div>
+
+                      <div class="box">
+                        <input type="checkbox" id="khac" name="option" value="KHAC" onclick="showForm('khac_select')" />
+                        <label for="khac">KHAC</label>
+                        <br />
+                        <select id="khac_select" name="select_option" form="register" style="display: none;">
+                            <option value=" "> </option>
+                          {% for line in khac_details %}
+                            <option value="{{line[1]}}">{{line[1]}}</option>
+                        {% endfor %}
+                        </select>
+                      </div>
+                    </div>
+                    <br><br>
+                     <input type="submit" id="save_print" value="Luu va In thong tin">
+
+                    <div class="register_tab">
+
+                        <div class="tab_left">
+                            <div class="patient_search_day">
+                                <p>Tim benh nhan theo ngay</p>
+                                <div class="day_form">
+                                    <form method="POST" action="/search_dmy">
+                                        <div class="inline">
+                                        <label for="from_date">Tu: </label></br>
+                                        <input type="date" id="from_date" name="from_date"><br><br>
+
+                                        <label for="to_date">Tu: </label></br>
+                                        <input type="date" id="to_date" name="to_date"><br><br>
+                                        </div>
+                                        <input type="submit"  value="Tim benh nhan">
+                                    </form>
+
+                                </div>
+                                <hr>
+                                <div class="day_form">
+                                <form method="POST" action="/patient_search_day">
+                                    <label for="search_date">Tim DS benh nhan theo ngay: </label></br>
+                                    <div class="inline">
+
+                                    <input type="date" id="search_date" name="search_date"><br><br>
+                                    <input type="submit"  value="Tim benh nhan">
+                                        </div>
+                                </form>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="patient_search_form">
+                            <form method="POST" action="/patient_search" id="patient_search">
+                                <label for="search_query">Tim benh nhan: </br><span>(Nhap ten / nam sinh / dia chi
+                                    hoac so dt)</span></label>
+                                <input type="text" id="search_query" name="search_query"><br><br>
+                                <input type="submit" id="patient_search_submit" value="Tim benh nhan">
+                            </form>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="filter">
+                    <div class="filter_date">
+                        <form method="POST">
+                            <div class="inline">
+                                <label for="filter_from_month">Thang:</label>
+                                <input type="number" id="filter_from_month" name="filter_from_month" min="1" max="12">
+                                <label for="filter_from_year">Nam:</label>
+                                <input type="number" id="filter_from_year" name="filter_from_year" min="2023" max="1203">
+                                <input type="submit"  value="CHON"><br><br>
+                            </div>
+
+                        </form>
+                    </div>
+                <hr>
+                    <a href="/filter/xnm">DS Xet nghiep Mau</a>
+                    <a href="/filter/pap_hpv">DS Xet nghiem PAP - HPV</a>
+                    <a href="/filter/msmp">DS Khach hang MSMP</a>
+                    <a href="/">Tong Chi Trong Thang</a>
+                    <a href="/">Chi tra don vi xet nghiem</a>
+                    <a href="/patients">Tong Ket Thang</a>
+            </div>
+        </div>
+
+
+{% endblock %}

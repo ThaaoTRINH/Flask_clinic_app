@@ -1,0 +1,21 @@
+
+table{
+    display: flex;
+    justify-content: center;
+    border-collapse: collapse}
+
+tr, th, td{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+tr {
+    height: 2.5em;
+    width: 5em;
+
+}
+td, th{
+    padding: 10px;
+}
+th{
+    font-weight: bold;
+    text-transform: uppercase;}
